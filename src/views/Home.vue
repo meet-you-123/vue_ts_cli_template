@@ -1,6 +1,7 @@
 <template>
     <div class="login">
         <p class="login-title">{{ title }}</p>
+        {{#vant}}
         <van-form @submit="onSubmit" class="form-wrap">
             <van-field
                 v-model="state.username"
@@ -23,20 +24,31 @@
                 </van-button>
             </div>
         </van-form>
+        {{/vant}}
     </div>
 </template>
 <script lang="ts">
 import { defineComponent, ref, reactive } from "vue";
+{{#store}}
 import { useStore } from "vuex";
+{{/store}}
+{{#router}}
 import { useRoute, useRouter } from "vue-router";
+{{/router}}
+{{#vant}}
 import { Toast } from "vant";
+{{/vant}}
 // import { login } from "../api/index";
 export default defineComponent({
     name: "login",
     setup() {
+        {{#router}}
         const router = useRouter();
         const route = useRoute();
+        {{/router}}
+        {{#store}}
         const store = useStore();
+        {{store}}
         const title = ref("渐进式JavaScript 框架-登录");
         const state = reactive({
             username: "",

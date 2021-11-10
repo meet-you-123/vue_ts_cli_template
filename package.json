@@ -1,9 +1,9 @@
 {
-  "name": "template",
+  "name": "{{ name }}",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "https://github.com/meet-you-123/vue_ts_cli_template.git",
-  "author": "杨素桢 <3352439264@qq.com>",
+  "author": "{{ author }}",
   "license": "MIT",
   "scripts": {
     "dev": "cross-env envMode=dev webpack serve --config ./build/webpack.dev.conf.js  --color",
@@ -41,9 +41,16 @@
     "@babel/runtime-corejs3": "^7.16.0",
     "axios": "^0.24.0",
     "core-js": "^3.19.1",
+    "mustache": "^4.2.0",
+    {{#vant}}
     "vant": "^3.2.8",
+    {{/vant}}
     "vue": "^3.2.21",
+    {{#router}}
     "vue-router": "4",
+    {{/router}}
+    {{#store}}
     "vuex": "^4.0.2"
+    {{/store}}
   }
 }

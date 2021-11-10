@@ -9,19 +9,25 @@
 </template>
 <script lang="ts">
 import { defineComponent, ref, onMounted, computed } from "vue";
+{{#store}}
 import { useStore } from "vuex";
+{{/store}}
 export default defineComponent({
     name: "index",
     setup() {
+        {{#store}}
         const store = useStore();
+        {{/store}}
         const title = ref("渐进式JavaScript 框架-about");
         onMounted(() => {
             console.log("mounted!");
         });
         return {
             title,
+            {{#store}}
             token: computed(() => store.state.token),
             user: computed(() => store.state.user),
+            {{/store}}
         };
     },
 });
