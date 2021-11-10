@@ -1,12 +1,12 @@
 module.exports = {
     prompts: {
         name: {
-            type: "string",
+            type: "input",
             required: true,
             message: "Project name"
         },
         author: {
-            type: "string",
+            type: "input",
             message: Author,
         },
         router: {
