@@ -1,27 +1,31 @@
 module.exports = {
-    prompts: {
-        name: {
+    prompts: [{
+            name: "name",
             type: "input",
             required: true,
             message: "Project name"
         },
-        author: {
+        {
+            name: "author",
             type: "input",
             message: Author,
         },
-        router: {
+        {
+            name: "router",
             type: "confirm",
             message: "Install vue-router"
         },
-        store: {
+        {
+            name: "store",
             type: "confirm",
             message: "Install vuex"
         },
-        vant: {
+        {
+            name: "vant",
             type: "confirm",
             message: "Install vant"
         }
-    },
+    ],
 
 
     filter: {
