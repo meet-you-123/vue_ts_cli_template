@@ -7,7 +7,7 @@ const prompts = [{
     {
         name: "author",
         type: "input",
-        message: Author,
+        message: "Author",
     },
     {
         name: "router",
