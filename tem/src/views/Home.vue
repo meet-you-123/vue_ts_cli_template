@@ -48,7 +48,7 @@ export default defineComponent({
         {{/router}}
         {{#store}}
         const store = useStore();
-        {{store}}
+        {{/store}}
         const title = ref("渐进式JavaScript 框架-登录");
         const state = reactive({
             username: "",

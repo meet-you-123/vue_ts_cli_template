@@ -1,8 +1,10 @@
 <template>
     <div class="about">
         <p class="title">{{ title }}</p>
+        {{#store}}
         <h1>用户名:{{ user.name }}</h1>
         <h3>token:{{ token }}</h3>
+        {{/store}}
         <input type="text" value="1212" />
         <div class="bg">bg111111</div>
     </div>

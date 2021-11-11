@@ -32,7 +32,7 @@ import { defineComponent, ref, reactive } from "vue";
 {{#store}}
 import { useStore } from "vuex";
 {{/store}}
-{{router}}
+{{#router}}
 import { useRoute, useRouter } from "vue-router";
 {{/router}}
 {{#vant}}

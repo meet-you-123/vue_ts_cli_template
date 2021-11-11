@@ -1,27 +1,31 @@
 <template>
     <div id="app">
-        <div id="nav" v-if="!$route.meta.hide">
+        <div id="nav" {{#router}} v-if="!$route.meta.hide" {{/router}}>
             <router-link to="/">Home</router-link>|
             <router-link to="/about">About</router-link>
         </div>
         <keep-alive>
             <router-view
-                v-if="$route.meta.keepAlive"
+                {{#router}}v-if="$route.meta.keepAlive"{{/router}}
                 class="router"
             ></router-view>
         </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive" class="router"></router-view>
+       {{#router}} <router-view v-if="!$route.meta.keepAlive" class="router"></router-view>{{/router}}
     </div>
 </template>
 <script>
 import { defineComponent, computed } from "vue";
+{{#store}}
 import { useStore } from "vuex";
+{{/store}}
 export default defineComponent({
     setup() {
+        {{#store}}
         const store = useStore();
         return {
             title: computed(() => store.state.title),
         };
+        {{/store}}
     },
 });
 </script>
